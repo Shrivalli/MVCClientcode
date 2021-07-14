@@ -78,7 +78,9 @@ namespace ProductClient.Controllers
         [HttpPost]
         public async Task<IActionResult> Edit(Product p)
         {
+            //Editing the product http post method
             Product p1 = new Product();
+            Product p2 = new Product();
             using (var httpClient = new HttpClient())
             {
                 int id = p.pid;
@@ -113,6 +115,7 @@ namespace ProductClient.Controllers
         [HttpPost]
         public async Task<ActionResult> Delete(Product p)
         {
+            //Deleting a product
             int prid = Convert.ToInt32(TempData["Prid"]);
             using (var httpClient = new HttpClient())
             {
